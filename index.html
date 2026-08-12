@@ -10,15 +10,15 @@
 <body>
 
   <!-- Top Announcement Bar -->
-  <div class="top-bar">
-    <div class="top-bar-container">
-      <p>🏬 <strong>Memon Diaper & Baby Care</strong> - Direct Wholesale Rates | Owner: Umer</p>
-      <p>📞 Call/WhatsApp: <a href="tel:03422711403">0342-2711403</a> | <a href="tel:03703249482">0370-3249482</a></p>
-    </div>
+<div class="top-bar">
+  <div class="top-bar-container">
+    <p>🏬 <strong>Memon Diaper & Baby Care</strong> - Direct Wholesale Rates | Owner: Umer</p>
+    <p>📞 Call/WhatsApp: <a href="tel:03422711403">0342-2711403</a> | <a href="tel:03703249482">0370-3249482</a></p>
   </div>
+</div>
 
-  <!-- Main Navigation Bar -->
-  <nav class="navbar">
+<!-- Main Navigation Bar -->
+<nav class="navbar">
   <div class="logo">
     <a href="index.html">
       <i class="fa-solid fa-baby-carriage"></i>
@@ -27,7 +27,7 @@
     </a>
   </div>
 
- <!-- Mobile Hamburger Icon (Yeh missing tha) -->
+  <!-- Mobile Hamburger Icon -->
   <div class="menu-toggle" id="mobile-menu-btn">
     <i class="fa-solid fa-bars"></i>
   </div>
@@ -36,10 +36,13 @@
   <ul class="nav-links" id="nav-links">
     <li><a href="index.html" class="active">Home</a></li>
     <li><a href="about.html">About Us</a></li>
-        <li><a href="blog.html"  >Blog</a></li>
+    <li><a href="blog.html">Blog</a></li>
 
-    <li class="dropdown">
-      <a href="#">Products <i class="fa-solid fa-chevron-down"></i></a>
+    <!-- Dropdown (Products Category) -->
+    <li class="dropdown" id="dropdown-parent">
+      <a href="javascript:void(0);" id="dropdown-toggle" class="dropdown-link">
+        Products <i class="fa-solid fa-chevron-down"></i>
+      </a>
       <ul class="dropdown-menu">
         <li><a href="diapers.html">Baby Diapers</a></li>
         <li><a href="wipes.html">Wet Wipes</a></li>
@@ -47,6 +50,7 @@
         <li><a href="soaps.html">Baby Products</a></li>
       </ul>
     </li>
+
     <li><a href="contact.html">Contact Us</a></li>
     <li>
       <button class="btn-deals-nav">
