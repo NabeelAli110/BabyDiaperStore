@@ -10,15 +10,15 @@
 <body>
 
   <!-- Top Announcement Bar -->
-  <div class="top-bar">
-    <div class="top-bar-container">
-      <p>🏬 <strong>Memon Diaper & Baby Care</strong> - Direct Wholesale Rates | Owner: Umer</p>
-      <p>📞 Call/WhatsApp: <a href="tel:03422711403">0342-2711403</a> | <a href="tel:03703249482">0370-3249482</a></p>
-    </div>
+<div class="top-bar">
+  <div class="top-bar-container">
+    <p>🏬 <strong>Memon Diaper & Baby Care</strong> - Direct Wholesale Rates | Owner: Umer</p>
+    <p>📞 Call/WhatsApp: <a href="tel:03422711403">0342-2711403</a> | <a href="tel:03703249482">0370-3249482</a></p>
   </div>
+</div>
 
-  <!-- Navigation Bar -->
-  <nav class="navbar">
+<!-- Main Navigation Bar -->
+<nav class="navbar">
   <div class="logo">
     <a href="index.html">
       <i class="fa-solid fa-baby-carriage"></i>
@@ -27,18 +27,22 @@
     </a>
   </div>
 
-  <!-- Mobile Hamburger Icon (Yeh missing tha) -->
+  <!-- Mobile Hamburger Icon -->
   <div class="menu-toggle" id="mobile-menu-btn">
     <i class="fa-solid fa-bars"></i>
   </div>
 
   <!-- Navigation Links -->
   <ul class="nav-links" id="nav-links">
-    <li><a href="index.html" >Home</a></li>
-    <li><a href="about.html" >About Us</a></li>
-    <li><a href="blog.html" class="active" >Blog</a></li>
-    <li class="dropdown">
-      <a href="#">Products <i class="fa-solid fa-chevron-down"></i></a>
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="blog.html">Blog</a></li>
+
+    <!-- Dropdown (Products Category) -->
+    <li class="dropdown" id="dropdown-parent">
+      <a href="javascript:void(0);" id="dropdown-toggle" class="dropdown-link">
+        Products <i class="fa-solid fa-chevron-down"></i>
+      </a>
       <ul class="dropdown-menu">
         <li><a href="diapers.html">Baby Diapers</a></li>
         <li><a href="wipes.html">Wet Wipes</a></li>
@@ -46,6 +50,7 @@
         <li><a href="soaps.html">Baby Products</a></li>
       </ul>
     </li>
+
     <li><a href="contact.html">Contact Us</a></li>
     <li>
       <button class="btn-deals-nav">
@@ -54,7 +59,6 @@
     </li>
   </ul>
 </nav>
-
   <!-- Page Header Banner with Overlay Background Image -->
   <section style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://anabatlamart.com/cdn/shop/files/ana_batla_mart_banner_jpg.jpg?v=1777031065&width=1920'); background-size: cover; background-position: center; padding: 80px 8%; text-align: center; color: var(--white); height: 80vh;">
     <h1 style="font-size: 2.8rem; font-weight: 700; margin-bottom: 12px; text-shadow: 0 2px 4px rgba(0,0,0,0.3);">Baby Care & Wholesale Blog</h1>
