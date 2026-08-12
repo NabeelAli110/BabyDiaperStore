@@ -381,51 +381,74 @@
     </div>
   </div>
 
-  <script>
-  // Elements Selection
-  const menuBtn = document.getElementById('mobile-menu-btn');
-  const navLinks = document.getElementById('nav-links');
-  const dealsBtn = document.querySelector('.btn-deals-nav');
-  const dealsModal = document.getElementById('dealsModal');
-  const closeDealsBtn = document.getElementById('closeDealsModal');
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Elements Selection
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const navLinks = document.getElementById('nav-links');
+    const dealsBtn = document.querySelector('.btn-deals-nav');
+    const dealsModal = document.getElementById('dealsModal');
+    const closeDealsBtn = document.getElementById('closeDealsModal');
+    
+    // Dropdown Elements
+    const dropdownToggle = document.getElementById('dropdown-toggle');
+    const dropdownParent = document.getElementById('dropdown-parent');
 
-  // 1. Mobile Hamburger Menu Toggle
-  if (menuBtn && navLinks) {
-    menuBtn.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-      const icon = menuBtn.querySelector('i');
-      if (navLinks.classList.contains('active')) {
-        icon.classList.remove('fa-bars');
-        icon.classList.add('fa-xmark');
-      } else {
-        icon.classList.remove('fa-xmark');
-        icon.classList.add('fa-bars');
+    // 1. Mobile Hamburger Menu Toggle
+    if (menuBtn && navLinks) {
+      menuBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        navLinks.classList.toggle('active');
+        const icon = menuBtn.querySelector('i');
+        if (icon) {
+          if (navLinks.classList.contains('active')) {
+            icon.className = 'fa-solid fa-xmark';
+          } else {
+            icon.className = 'fa-solid fa-bars';
+          }
+        }
+      });
+    }
+
+    // 2. Mobile Dropdown Category Toggle (Yeh Naya Fix Hai)
+    if (dropdownToggle && dropdownParent) {
+      dropdownToggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        // Toggle active class on dropdown
+        dropdownParent.classList.toggle('active');
+      });
+    }
+
+    // 3. Open Special Deals Modal
+    if (dealsBtn && dealsModal) {
+      dealsBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        dealsModal.classList.add('active');
+        if (navLinks) navLinks.classList.remove('active');
+      });
+    }
+
+    // 4. Close Modal on 'X' Button Click
+    if (closeDealsBtn && dealsModal) {
+      closeDealsBtn.addEventListener('click', () => {
+        dealsModal.classList.remove('active');
+      });
+    }
+
+    // 5. Close Modal & Mobile Dropdowns when clicking outside
+    window.addEventListener('click', (e) => {
+      if (dealsModal && e.target === dealsModal) {
+        dealsModal.classList.remove('active');
+      }
+
+      if (navLinks && !navLinks.contains(e.target) && !menuBtn.contains(e.target)) {
+        navLinks.classList.remove('active');
+        const icon = menuBtn.querySelector('i');
+        if (icon) icon.className = 'fa-solid fa-bars';
       }
     });
-  }
-
-  // 2. Open Special Deals Modal
-  if (dealsBtn && dealsModal) {
-    dealsBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      dealsModal.classList.add('active');
-      // Mobile drawer open ho to usko auto-close kar dein
-      if (navLinks) navLinks.classList.remove('active');
-    });
-  }
-
-  // 3. Close Modal on 'X' Button Click
-  if (closeDealsBtn && dealsModal) {
-    closeDealsBtn.addEventListener('click', () => {
-      dealsModal.classList.remove('active');
-    });
-  }
-
-  // 4. Close Modal when clicking outside the box
-  window.addEventListener('click', (e) => {
-    if (e.target === dealsModal) {
-      dealsModal.classList.remove('active');
-    }
   });
 </script>
 
